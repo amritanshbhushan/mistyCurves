@@ -1,0 +1,30 @@
+<div class="container my-5">
+  <h2 class="text-center mb-5">Top Indian Destinations</h2>
+
+  <!-- Optional Filter Buttons -->
+  <div class="text-center mb-4">
+    <button 
+      *ngFor="let cat of categories" 
+      class="btn me-2 mb-2"
+      [ngClass]="{ 'btn-primary': selectedCategory === cat, 'btn-outline-primary': selectedCategory !== cat }"
+      (click)="filterCategory(cat)">
+      {{ cat }}
+    </button>
+  </div>
+
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="col" *ngFor="let dest of filteredDestinations">
+      <div class="card h-100 border-0 shadow-sm position-relative destination-card">
+        <img [src]="dest.image" loading="lazy" class="card-img-top" alt="{{ dest.name }}">
+        <div class="badge bg-warning text-dark position-absolute top-0 start-0 m-2" *ngIf="dest.tag">
+          {{ dest.tag }}
+        </div>
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">{{ dest.name }}</h5>
+          <p class="card-text">{{ dest.description }}</p>
+          <a routerLink="/tours" class="btn btn-outline-primary mt-auto">View Tours</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

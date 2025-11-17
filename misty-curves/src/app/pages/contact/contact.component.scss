@@ -1,0 +1,28 @@
+.contact-wrapper {
+  min-height: 100vh;
+  background: linear-gradient(to right, #f1f4f9, #dff1f1);
+  padding: 60px 0;
+}
+
+.contact-box {
+  background: white;
+  border-radius: 12px;
+}
+
+.bg-primary {
+  background-color: #1d3557 !important;
+}
+
+.bg-primary h3,
+.bg-primary p,
+.bg-primary ul li {
+  color: white;
+}
+
+label {
+  font-weight: 500;
+}
+
+textarea {
+  resize: none;
+}

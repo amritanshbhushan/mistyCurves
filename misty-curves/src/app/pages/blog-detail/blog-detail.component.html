@@ -1,0 +1,5 @@
+<div class="container py-5" *ngIf="blogPost">
+  <h1 class="mb-3">{{ blogPost.title }}</h1>
+  <img [src]="blogPost.image" loading="lazy" class="img-fluid mb-4" alt="{{ blogPost.title }}">
+  <p>{{ blogPost.content }}</p>
+</div>

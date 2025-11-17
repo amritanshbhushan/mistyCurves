@@ -1,0 +1,36 @@
+<div class="container my-5">
+  <h2 class="text-center mb-4">AI Travel Planner</h2>
+  <form (ngSubmit)="generateItinerary()" #plannerForm="ngForm" class="row g-3 bg-light p-4 rounded shadow">
+    <div class="col-md-6">
+      <label>Destination</label>
+      <input class="form-control" name="destination" [(ngModel)]="planner.destination" required />
+    </div>
+    <div class="col-md-6">
+      <label>Number of Days</label>
+      <input type="number" class="form-control" name="days" [(ngModel)]="planner.days" required />
+    </div>
+    <div class="col-md-6">
+      <label>Travel Type</label>
+      <select class="form-control" name="type" [(ngModel)]="planner.type" required>
+        <option value="Adventure">Adventure</option>
+        <option value="Family">Family</option>
+        <option value="Honeymoon">Honeymoon</option>
+        <option value="Spiritual">Spiritual</option>
+      </select>
+    </div>
+    <div class="col-md-6">
+      <label>Starting Location</label>
+      <input class="form-control" name="start" [(ngModel)]="planner.start" required />
+    </div>
+    <div class="col-12 text-center">
+      <button class="btn btn-primary px-5" type="submit">Generate Itinerary</button>
+    </div>
+  </form>
+
+  <div *ngIf="itinerary.length" class="mt-5">
+    <h4 class="text-center mb-4">Suggested Itinerary</h4>
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let day of itinerary">{{ day }}</li>
+    </ul>
+  </div>
+</div>

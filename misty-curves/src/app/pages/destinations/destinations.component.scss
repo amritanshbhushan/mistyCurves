@@ -1,0 +1,39 @@
+.destination-wrapper {
+  min-height: 100vh;
+  background: linear-gradient(to right, #5c6bc0, #8e9eab);
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.card.destination-card {
+  border: none;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  }
+
+  .card-img-top {
+    height: 220px;
+    object-fit: cover;
+  }
+
+  .card-body {
+    background: #fff;
+    border-top: 1px solid #eee;
+  }
+}
+
+h2 {
+  font-weight: 600;
+}
+
+.destination-card {
+  transition: transform 0.3s ease;
+}
+.destination-card:hover {
+  transform: scale(1.02);
+}

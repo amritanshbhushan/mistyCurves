@@ -1,0 +1,49 @@
+<!-- Hero Section with Search Bar -->
+<section class="hero-section text-white text-center d-flex align-items-center justify-content-center">
+  <div class="overlay p-5 rounded">
+    <h1 class="display-4 fw-bold mb-3">Discover Incredible India</h1>
+    <p class="lead mb-4">Personalized tours, expert guides, unbeatable support.</p>
+    <form class="d-flex search-form mx-auto">
+      <input class="form-control me-2" type="search" placeholder="Search Destinations" aria-label="Search">
+      <button class="btn btn-primary" type="submit">Search</button>
+    </form>
+  </div>
+</section>
+
+<!-- Featured Tours -->
+<section class="featured-section py-5">
+  <div class="container">
+    <h2 class="text-center mb-4">Featured Holiday Packages</h2>
+    <div class="row g-4">
+      <div class="col-md-4" *ngFor="let tour of featuredTours">
+        <div class="card tour-card h-100 shadow-sm">
+          <img [src]="tour.image" loading="lazy" class="card-img-top" alt="{{ tour.title }}">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">{{ tour.title }}</h5>
+            <p class="card-text">{{ tour.description }}</p>
+            <a routerLink="/tours" class="btn btn-outline-primary mt-auto">View Details</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Latest Stories / Blogs -->
+<section class="blog-section py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center mb-4">Latest Travel Stories</h2>
+    <div class="row g-4">
+      <div class="col-md-4" *ngFor="let post of blogPosts">
+        <div class="card h-100 shadow-sm">
+          <img [src]="post.image" loading="lazy" class="card-img-top" alt="{{ post.title }}">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">{{ post.title }}</h5>
+            <p class="card-text">{{ post.snippet }}</p>
+            <a [routerLink]="['/blog', post.id]" class="btn btn-outline-secondary mt-auto">Read More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
